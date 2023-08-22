@@ -4,15 +4,19 @@ import { getAllToDo } from "./utils/handle-api";
 
 function App() {
 
-  const[toDo, setTodo] = useState([])
+  //use state is a setter
+  const[toDo, setTodofromState] = useState([])
+  const[test, setTest] = useState('test from state') //setTest('my new value') to use as setter
 
+  //aka connectedCallback()
   useEffect(() => {
-    getAllToDo(setTodo)
+    getAllToDo(setTodofromState)
   }, [])
 
   return (
     <div className="App">
-
+      {/* <h2>{test}</h2> */}
+      
       <div className="container">
         <h1>todo app</h1>
 
