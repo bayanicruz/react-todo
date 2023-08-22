@@ -12,7 +12,12 @@ function App() {
           <div className="add">Add</div>
         </div>
 
-       
+        <div className="list">
+
+            <Todo text="doc appointment"></Todo>
+            <Todo text="grocery"></Todo>
+            <Todo text="laundry"></Todo>
+        </div>
 
       </div>
       
