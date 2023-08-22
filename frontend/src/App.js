@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
 import Todo from "./components/todo"
-import { getAllToDo } from "./utils/handle-api";
+import { addTodo, getAllToDo } from "./utils/handle-api";
 
 function App() {
 
   //use state is a setter
-  const[toDo, setTodofromState] = useState([])
-  const[test, setTest] = useState('test from state') //setTest('my new value') to use as setter
+  const [toDo, setTodofromState] = useState([])
+  const [text, setText] = useState("")
+  const [test, setTest] = useState('test from state') //setTest('my new value') to use as setter
+
 
   //aka connectedCallback()
   useEffect(() => {
@@ -21,8 +23,15 @@ function App() {
         <h1>todo app</h1>
 
         <div className="top">
-          <input type="text" placeholder="Add todos" />
-          <div className="add">Add</div>
+          <input 
+          type="text" 
+          placeholder="Add todos" 
+          value={text}
+          onChange={(e) => setText(e.target.value)}
+          />
+
+          <div className="add" 
+          onClick={() => addTodo(text, setText,setTodofromState )}>Add</div>
         </div>
 
         <div className="list">

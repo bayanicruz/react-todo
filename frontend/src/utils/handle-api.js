@@ -10,4 +10,14 @@ const getAllToDo = (setTodo) => { //setTodo expects a function as an arg
     })
 }
 
-export {getAllToDo}
+const addTodo = (text, setText, setTodo) => {
+    axios
+    .post(`${baseUrl}/save`, {text})
+    .then((data) => {
+        console.log(data)
+        setText("")
+        getAllToDo(setTodo)
+    })
+}
+
+export {getAllToDo, addTodo}
