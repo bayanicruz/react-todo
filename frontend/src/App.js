@@ -38,9 +38,9 @@ function App() {
 
           {toDo.map((item) => <Todo key={item._id} text={item.text} />)}
 
-            <Todo text="doc appointment"></Todo>
-            <Todo text="grocery"></Todo>
-            <Todo text="laundry"></Todo>
+            <Todo text="[hardcode] doc appointment"></Todo>
+            <Todo text="[hardcode] grocery"></Todo>
+            <Todo text="[hardcode] laundry"></Todo>
         </div>
 
       </div>
